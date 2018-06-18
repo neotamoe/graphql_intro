@@ -37,18 +37,21 @@ var rootValue = {
    randomPerson: () => person,
 
    // Mutations
-   incrementCounter: (obj, args) => {
-     counterValue = counterValue + (args.value) || 1;
+   incrementCounter: (args) => {
+     counterValue = counterValue + ((args.value) || 1);
      return counterValue;
    },
  };
 
-// node schema.js "query X {x}"
+// use terminal to run either of the following commands.  it will log either
+// "Hello world!" or 8 depending on which command is run.
+//
+// node schema.js "{hello}"
 // node schema.js "{counter}"
 //
 // const query = process.argv[2];
 //
-// graphql(schema, query, root)
+// graphql(schema, query, rootValue)
 //   .then((response) => {
 //   console.log(response);
 // });
